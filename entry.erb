@@ -1,6 +1,6 @@
 	<div class="item">
-		<div class="date"><%= @entry.created_at.strftime("%b") %></div>
-      	<h2><a href="<%= @entry.link %>"><%= @entry.title %></a></h2>
+		<div class="date"><%= @entry.created_at.strftime("%y/%m/%y") %></div>
+      	<h2><%= @entry.title %></h2>
 		<div class="body"><%= @entry.body %></div>
 	    <ul class="info">
 	      <% unless @entry.category.nil? %>
