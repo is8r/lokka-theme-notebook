@@ -2,7 +2,7 @@
 <% @posts.each do |post| %>
   
 	<div class="item">
-		<div class="date"><%= @entry.created_at.strftime("%Y/%m/%d") %></div>
+		<div class="date"><%= @entry.created_at.strftime("%m/%d") %></div>
 		<h3><a href="<%= post.link %>"><%= post.title %></a></h3>
 		<div class="body"><%= post.body %></div>
 	    <ul class="info">
@@ -33,6 +33,7 @@
 		<% end %>
 	</ul>
 	</div>
+	
 </div>
 
 
