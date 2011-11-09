@@ -1,34 +1,26 @@
 
 <% @posts.each do |post| %>
   
-	<!-- item -->
 	<div class="item">
-		<div class="date"><%= @entry.created_at.strftime("%Y.%m.%d") %></div>
-		<h2><a href="<%= post.link %>"><%= post.title %></a></h2>
+		<div class="date"><%= post.created_at.strftime("%Y.%m.%d") %></div>
+		<h3><a href="<%= post.link %>"><%= post.title %></a></h3>
 		<div class="body"><%= post.body %></div>
-	    
-		<div class="info">
-		    <ul>
-		      <% unless post.category.nil? %>
-		      <li class="category"><a href="<%= post.category.link %>"><%= post.category.title %></a></li>
-		      <% end %>
-		      <% unless post.tags.size.zero? %>
-		      <li class="tags"><%= post.tags_to_html %></li>
-		      <% end %>
-	    	</ul>
-		</div>
-		<div class="admin">
-		    <ul>
+	    <ul class="info">
+	      <% unless post.category.nil? %>
+	      <li class="category"><a href="<%= post.category.link %>"><%= post.category.title %></a></li>
+	      <% end %>
+	      <% unless post.tags.size.zero? %>
+	      <li class="tags"><%= post.tags_to_html %></li>
+	      <% end %>
+	      <li class="author"><%= post.user.name %></li>
+	    </ul>
+		<div class="footer">
 			<% if logged_in? %>
-			<li><p><a href="<%= post.edit_link %>"></a></p></li>
+			<p><a href="<%= post.edit_link %>"><%= t('edit') %></a></p>
 			<% end %>
-		    <li class="author"><%= post.user.name %></li>
-			</ul>
-			<div class="c"></div>
 		</div>
 	</div>
-	<!-- /item -->
-	
+  
 <% end %>
 	
 	<div class="pager">
@@ -41,6 +33,7 @@
 		<% end %>
 	</ul>
 	</div>
-	
-</div>
+
+
+
 
