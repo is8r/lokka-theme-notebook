@@ -7,8 +7,6 @@
 		<h2><a href="<%= post.link %>"><%= post.title %></a></h2>
 		<div class="body"><%= post.body %></div>
 	    
-	    
-	    
 		<div class="info">
 		    <ul>
 		      <% unless post.category.nil? %>
@@ -17,14 +15,16 @@
 		      <% unless post.tags.size.zero? %>
 		      <li class="tags"><%= post.tags_to_html %></li>
 		      <% end %>
-		      <li class="author"><%= post.user.name %></li>
 	    	</ul>
 		</div>
 		<div class="admin">
 		    <ul>
 			<% if logged_in? %>
-			<p><a href="<%= post.edit_link %>"><%= t('edit') %></a></p>
+			<li><p><a href="<%= post.edit_link %>"></a></p></li>
 			<% end %>
+		    <li class="author"><%= post.user.name %></li>
+			</ul>
+			<div class="c"></div>
 		</div>
 	</div>
 	<!-- /item -->
@@ -44,28 +44,3 @@
 	
 </div>
 
-
-
-
-	<!-- item -->
-	<div class="item">
-		<div class="date">2011/01/09</div>
-		<h2><a href="/1">Test Post</a></h2>
-		<div class="body"><p>Welcome to Lokka!</p><p>Welcome to Lokka!</p><p>Welcome to Lokka!</p><p>Welcome to Lokka!</p><p>Welcome to Lokka!</p><p>Welcome to Lokka!</p><p>Welcome to Lokka!</p></div>
-		
-		<div class="info">
-		    <ul>
-		      <li class="tags"><ul class="tags"><li class="tag"><a href="/tags/lokka/">tags</a></li><li class="tag"><a href="/tags/lokka/">tags</a></li><li class="tag"><a href="/tags/lokka/">tags</a></li></ul></li>
-		      <li class="author">author</li>
-		    </ul>
-			<div class="c"></div>
-		</div>
-		<div class="admin">
-		    <ul>
-				<li><p><a href=/admin/>admin login</a></p></li>
-				<li class="l"><a href="/admin/posts/1/edit">edit</a></li>
-			</ul>
-			<div class="c"></div>
-		</div>
-	</div>
-	<!-- /item -->
