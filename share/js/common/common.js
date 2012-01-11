@@ -1,4 +1,31 @@
 
+$(function(){
+	$('.bubble').jrumble({
+		rangeX:2,
+		rangeY:2,
+		rangeRot:3,
+		rumbleSpeed:100
+	});
+	$('#items-inner').infinitescroll({
+		navSelector  	: ".pager a:first",
+		nextSelector 	: ".pager a:first",
+		itemSelector 	: "#items-inner .item",
+		loading: {
+			finished: undefined,
+			finishedMsg: "finished",
+			img: "http://lokka-theme-notebook.heroku.com/theme/notebook/share/images/ajax-loader.gif",
+			msg: null,
+			msgText: "loading...",
+			selector: null,
+			speed: 'fast',
+			start: undefined
+		}
+    }, function(newElements){
+    	//window.console && console.log('context: ',this);
+    	//window.console && console.log('returned: ', newElements);
+    });
+});
+
 
 /* iPhoneêUÇËï™ÇØ
 ---------------------------------------------------------------------------------------------------- */

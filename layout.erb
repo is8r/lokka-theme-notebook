@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
 <head>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=Shift-JIS">
@@ -15,32 +15,29 @@
     <meta name="description" content="<%= @site.meta_description %>" />
     <meta name="keywords" content="<%= @site.meta_keywords %>" />
     <link href="/index.atom" rel="alternate" title="<%= @title %>" type="application/atom+xml" />
-    
-	<!--common-->
+	<meta property="og:title" content="<%= @site.title %>" /> 
+	<meta property="og:site_name" content="<%= @site.title %>" /> 
+	<meta property="og:type" content="website" /> 
+	<meta property="og:url" content="<%= @site.url %>" /> 
+	<meta property="og:image" content="<%= @site.url %>/share/images/apple-touch-icon.jpg" /> 
+	<link rel="canonical" href="<%= @site.url %>" /> 
+	<meta http-equiv="imagetoolbar" content="no"> 
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+	
+	<link rel="shortcut icon" href="<%= @theme.path %>/share/images/favicon.ico"> 
+	<link rel="apple-touch-icon" href="<%= @theme.path %>/share/images/apple-touch-icon.png" /> 
     <link rel="stylesheet" href="<%= @theme.path %>/share/css/import.css" type="text/css" />
 	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-	<script type="text/javascript">google.load("jquery", "1.5.2");</script>
+	<script type="text/javascript">google.load("jquery", "1.6.1");</script>
 	<script type="text/javascript" src="<%= @theme.path %>/share/js/common/static.js"></script>
 	<script type="text/javascript" src="<%= @theme.path %>/share/js/common/common.js"></script>
-	
-	<!--alone-->
+	<script type="text/javascript" src="<%= @theme.path %>/share/js/plugin/jrumble.1.1.min.js"></script>
+	<script type="text/javascript" src="<%= @theme.path %>/share/js/plugin/jquery.infinitescroll.js"></script>
 	<link href='http://fonts.googleapis.com/css?family=Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
-    
-	<!--dyrect-->
-	<style type="text/css">
-	</style>
-	<script type="text/javascript"><!--
-	$(function() {
-		
-	});
-	// --></script>
-    
     
 </head>
 <body>
-<!--bg-note-->
 <div id="bg-note"></div>
-<!--/bg-note-->
 
 <!--container-->
 <div id="container">
@@ -61,15 +58,17 @@
 	<!--sns-->
 	<div id="nav-sub">
 	<div id="nav-sub-inner">
+		<!-- follow me 
 		<h3>follow me!</h3>
-		<ul>
-			<li><a href="#"><img src="<%= @theme.path %>/share/images/b_twitter.png" alt="" width="106" height="36" /></a></li>
-			<li><a href="#"><img src="<%= @theme.path %>/share/images/b_github.png" alt="" width="106" height="36" /></a></li>
+		<ul class="badge">
+			<li class="bubble"><a href="#"><img src="<%= @theme.path %>/share/images/b_twitter.png" alt="" width="106" height="36" /></a></li>
+			<li class="bubble"><a href="#"><img src="<%= @theme.path %>/share/images/b_github.png" alt="" width="106" height="36" /></a></li>
 		</ul>
+		-->
 		<h3>Archives!</h3>
-		<ul>
+		<ul class="archives">
 			<% months.each do |month| %>
-			<li><a class="b_wood" href="/<%= month.year %>/<%= month.month %>/"><%= month.year %>/<%= month.month %></a></li>
+			<li class="bubble"><a class="b_leather" href="/<%= month.year %>/<%= month.month %>/"><%= month.year %>/<%= month.month %></a></li>
 			<% end %>
 		</ul>
 	</div>
@@ -104,7 +103,7 @@
 	<!--footer-->
 	<div id="footer">
 	<div id="footer-inner">
-		<div class="poweredby">powered by <a href="http://github.com/komagata/lokka">Lokka</a></div>
+		<div class="poweredby">powered by <a href="http://github.com/komagata/lokka">Lokka</a> / <a href="/admin/login">Login</a></div>
 	</div>
 	</div>
 	<!--/footer-->
